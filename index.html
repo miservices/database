@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>County Records Division — Public Lookup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="eyebrow">County Records Division · Public Terminal</p>
+      <h1>Criminal&nbsp;Record<span class="dot">.</span> Lookup</h1>
+      <p class="subhead">Search a Roblox username to pull their booking history from county files.</p>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="search-card" aria-label="Search">
+      <form id="searchForm" autocomplete="off">
+        <label for="username" class="field-label">Subject username</label>
+        <div class="search-row">
+          <span class="at-sign">@</span>
+          <input type="text" id="username" name="username" placeholder="e.g. RobloxBuilder22" maxlength="20" required />
+          <button type="submit" id="searchBtn">
+            <span class="btn-label">Pull File</span>
+          </button>
+        </div>
+      </form>
+      <p class="hint">Records are drawn directly from live in-game booking data.</p>
+    </section>
+
+    <section id="statusArea" class="status-area" hidden></section>
+
+    <section id="resultArea" class="result-area" hidden></section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Unofficial in-universe records terminal. All entries reflect in-game roleplay activity only.</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
