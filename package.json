@@ -1,0 +1,9 @@
+{
+  "name": "county-records-lookup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public criminal-record lookup site for a Roblox roleplay game, backed by Roblox Open Cloud DataStore reads.",
+  "engines": {
+    "node": ">=18"
+  }
+}
