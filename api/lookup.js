@@ -150,3 +150,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'server_error', message: 'Something went wrong on our end.' });
   }
 }
+
