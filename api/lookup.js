@@ -19,7 +19,25 @@
 const cache = new Map();
 const CACHE_TTL_MS = 30 * 1000;
 
+// Allowed origins for cross-origin requests. Add any domain that will embed
+// or call this API from the browser (your GitHub Pages site, custom domain,
+// local testing, etc).
+const ALLOWED_ORIGINS = [
+  'https://migovt.org',
+  'https://www.migovt.org',
+];
+
 export default async function handler(req, res) {
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
     return res.status(405).json({ error: 'method_not_allowed' });
